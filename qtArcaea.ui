@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Arcaea Score Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="main.qrc">
+    <normaloff>:/arcaea_main/res/ase-256x256.png</normaloff>
+    <normalon>:/arcaea_main/res/ase-256x256.png</normalon>
+    <disabledoff>:/arcaea_main/res/ase-256x256.png</disabledoff>
+    <disabledon>:/arcaea_main/res/ase-256x256.png</disabledon>
+    <activeoff>:/arcaea_main/res/ase-256x256.png</activeoff>
+    <activeon>:/arcaea_main/res/ase-256x256.png</activeon>
+    <selectedoff>:/arcaea_main/res/ase-256x256.png</selectedoff>
+    <selectedon>:/arcaea_main/res/ase-256x256.png</selectedon>:/arcaea_main/res/ase-256x256.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>27</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>5</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="columnCount">
+           <number>1</number>
+          </property>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>item</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="action_selectAll">
+            <property name="text">
+             <string>全選択</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="action_unSelectAll">
+            <property name="text">
+             <string>選択解除</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <property name="leftMargin">
+         <number>20</number>
+        </property>
+        <property name="rightMargin">
+         <number>20</number>
+        </property>
+        <property name="spacing">
+         <number>15</number>
+        </property>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButtonArcNote">
+          <property name="text">
+           <string>アークノート</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButtonNomalTap">
+          <property name="text">
+           <string>通常タップ</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="pushButtonArcTap">
+          <property name="text">
+           <string>アークタップ</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="pushButtonNomalLong">
+          <property name="text">
+           <string>通常ロング</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButtonTiming">
+          <property name="text">
+           <string>拍子</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButtonDelete">
+          <property name="text">
+           <string>削除</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>file</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionNew"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>&amp;Save as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>&amp;Import</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>&amp;Export</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>pushButtonArcNote</tabstop>
+  <tabstop>pushButtonNomalLong</tabstop>
+  <tabstop>pushButtonArcTap</tabstop>
+  <tabstop>pushButtonNomalTap</tabstop>
+ </tabstops>
+ <resources>
+  <include location="main.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_quit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNew</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_fileOpen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_as</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_saveAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonNomalLong</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>note_normalLong()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>501</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>470</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonNomalTap</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>note_normalTap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>470</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonArcTap</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>note_ArcTap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>694</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>470</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonArcNote</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>note_ArcNote()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>694</x>
+     <y>501</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>470</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImport</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_import()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExport</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_export()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonTiming</sender>
+   <signal>pressed()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>note_timing()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonDelete</sender>
+   <signal>pressed()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>note_delete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>648</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_selectAll</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>action_selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>702</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_unSelectAll</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>action_unSelectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>823</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>menu_about()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>reset()</slot>
+  <slot>menu_fileOpen()</slot>
+  <slot>menu_save()</slot>
+  <slot>menu_saveAs()</slot>
+  <slot>note_normalLong()</slot>
+  <slot>note_normalTap()</slot>
+  <slot>note_ArcNote()</slot>
+  <slot>note_ArcTap()</slot>
+  <slot>menu_import()</slot>
+  <slot>menu_export()</slot>
+  <slot>menu_quit()</slot>
+  <slot>note_timing()</slot>
+  <slot>note_delete()</slot>
+  <slot>action_selectAll()</slot>
+  <slot>action_unSelectAll()</slot>
+  <slot>menu_about()</slot>
+ </slots>
+</ui>
