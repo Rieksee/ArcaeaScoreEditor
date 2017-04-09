@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="arcaea_main">
+    <file>res/ase-256x256.png</file>
+    <file>res/ase-48x48.png</file>
+    <file>res/ase-32x32.png</file>
+    <file>res/ase-24x24.png</file>
+    <file>res/ase-16x16.png</file>
+  </qresource>
+</RCC>
